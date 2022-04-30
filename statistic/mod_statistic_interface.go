@@ -7,4 +7,5 @@ type StatisticInterface interface {
 	Mean() float64
 	Sort()
 	GetData() []float64
+	Median() float54
 }
