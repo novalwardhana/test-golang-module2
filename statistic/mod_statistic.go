@@ -57,7 +57,7 @@ func (s *Statistic) Mean() float64 {
 
 /* Median */
 func (s *Statistic) Median() float64 {
-	s.Sort()
+	fmt.Println("datas: ", s.Datas)
 	if len(s.Datas) == 0 {
 		return 0
 	}
