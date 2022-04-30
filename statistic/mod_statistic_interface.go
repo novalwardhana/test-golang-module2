@@ -6,4 +6,5 @@ type StatisticInterface interface {
 	Min() float64
 	Mean() float64
 	Sort()
+	GetData() []float64
 }

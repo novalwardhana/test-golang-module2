@@ -71,3 +71,8 @@ func (s *Statistic) Swap(i, j int) {
 func (s *Statistic) Less(i, j int) bool {
 	return s.Datas[i] < s.Datas[j]
 }
+
+/* GetData */
+func (s *Statistic) GetData() []float64 {
+	return s.Datas
+}
