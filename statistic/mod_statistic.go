@@ -1,7 +1,6 @@
 package statistic
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -57,15 +56,13 @@ func (s *Statistic) Mean() float64 {
 
 /* Median */
 func (s *Statistic) Median() float64 {
-	fmt.Println("datas: ", s.Datas)
 	if len(s.Datas) == 0 {
 		return 0
 	}
 	if len(s.Datas)%2 == 0 {
-		return (s.Datas[len(s.Datas)%2-1] + s.Datas[len(s.Datas)%2]) / 2
+		return (s.Datas[len(s.Datas)/2-1] + s.Datas[len(s.Datas)/2]) / 2
 	} else {
-		fmt.Println("Test: ", len(s.Datas)%2)
-		return s.Datas[len(s.Datas)%2]
+		return s.Datas[len(s.Datas)/2]
 	}
 }
 
