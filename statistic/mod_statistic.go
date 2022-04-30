@@ -1,5 +1,7 @@
 package statistic
 
+import "sort"
+
 type Statistic struct {
 	Title string
 	Datas []float64
@@ -48,4 +50,24 @@ func (s *Statistic) Mean() float64 {
 	var sum = s.Sum()
 	mean := sum / count
 	return mean
+}
+
+/* Sort */
+func (s *Statistic) Sort() {
+	sort.Sort(s)
+}
+
+/* Len */
+func (s *Statistic) Len() int {
+	return len(s.Datas)
+}
+
+/* Swap */
+func (s *Statistic) Swap(i, j int) {
+	s.Datas[i], s.Datas[j] = s.Datas[j], s.Datas[i]
+}
+
+/* Less */
+func (s *Statistic) Less(i, j int) bool {
+	return s.Datas[i] < s.Datas[j]
 }
