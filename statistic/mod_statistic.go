@@ -52,6 +52,19 @@ func (s *Statistic) Mean() float64 {
 	return mean
 }
 
+/* Median */
+func (s *Statistic) Median() float64 {
+	s.Sort()
+	if len(s.Datas) == 0 {
+		return 0
+	}
+	if len(s.Datas)%2 == 0 {
+		return (s.Datas[len(s.Datas)%2-1] + s.Datas[len(s.Datas)%2]) / 2
+	} else {
+		return s.Datas[len(s.Datas)%2]
+	}
+}
+
 /* Sort */
 func (s *Statistic) Sort() {
 	sort.Sort(s)
