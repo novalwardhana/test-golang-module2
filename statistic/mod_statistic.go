@@ -1,6 +1,9 @@
 package statistic
 
-import "sort"
+import (
+	"fmt"
+	"sort"
+)
 
 type Statistic struct {
 	Title string
@@ -61,6 +64,7 @@ func (s *Statistic) Median() float64 {
 	if len(s.Datas)%2 == 0 {
 		return (s.Datas[len(s.Datas)%2-1] + s.Datas[len(s.Datas)%2]) / 2
 	} else {
+		fmt.Println("Test: ", len(s.Datas)%2)
 		return s.Datas[len(s.Datas)%2]
 	}
 }
